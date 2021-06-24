@@ -58,11 +58,11 @@
     <Compile Include="FormCrearCitaMedica.Designer.cs">
       <DependentUpon>FormCrearCitaMedica.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListaDoctoresYEspecialidades.cs">
+    <Compile Include="FormDoctores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListaDoctoresYEspecialidades.Designer.cs">
-      <DependentUpon>FormListaDoctoresYEspecialidades.cs</DependentUpon>
+    <Compile Include="FormDoctores.Designer.cs">
+      <DependentUpon>FormDoctores.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -84,8 +84,8 @@
     <EmbeddedResource Include="FormCrearCitaMedica.resx">
       <DependentUpon>FormCrearCitaMedica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListaDoctoresYEspecialidades.resx">
-      <DependentUpon>FormListaDoctoresYEspecialidades.cs</DependentUpon>
+    <EmbeddedResource Include="FormDoctores.resx">
+      <DependentUpon>FormDoctores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -102,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\BL.CitasMedicas.Doctor.datasource" />
+    <None Include="Properties\DataSources\BL.CitasMedicas.DoctoresBL.datasource" />
+    <None Include="Properties\DataSources\BL.CitasMedicas.SeguridadBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

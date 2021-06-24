@@ -90,7 +90,7 @@ namespace Citas_Medicas
 
         private void listaDeDoctoresYEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formListaDoctoresYEspecialidades = new FormListaDoctoresYEspecialidades();
+            var formListaDoctoresYEspecialidades = new FormDoctores();
             formListaDoctoresYEspecialidades.MdiParent = this;
             formListaDoctoresYEspecialidades.Show();
         }
