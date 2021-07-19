@@ -35,9 +35,10 @@
             System.Windows.Forms.Label medicoLabel;
             System.Windows.Forms.Label motivoCitaLabel;
             System.Windows.Forms.Label nombreLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrearCitaMedica));
             System.Windows.Forms.Label precioLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrearCitaMedica));
             this.listaPacientesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.listaPacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -66,7 +67,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listaPacientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             fechaLabel = new System.Windows.Forms.Label();
             horaLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
@@ -76,63 +76,80 @@
             precioLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaPacientesBindingNavigator)).BeginInit();
             this.listaPacientesBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaPacientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaPacientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaPacientesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // fechaLabel
             // 
             fechaLabel.AutoSize = true;
-            fechaLabel.Location = new System.Drawing.Point(14, 116);
+            fechaLabel.Location = new System.Drawing.Point(21, 178);
+            fechaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             fechaLabel.Name = "fechaLabel";
-            fechaLabel.Size = new System.Drawing.Size(40, 13);
+            fechaLabel.Size = new System.Drawing.Size(58, 20);
             fechaLabel.TabIndex = 1;
             fechaLabel.Text = "Fecha:";
             // 
             // horaLabel
             // 
             horaLabel.AutoSize = true;
-            horaLabel.Location = new System.Drawing.Point(121, 116);
+            horaLabel.Location = new System.Drawing.Point(182, 178);
+            horaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             horaLabel.Name = "horaLabel";
-            horaLabel.Size = new System.Drawing.Size(33, 13);
+            horaLabel.Size = new System.Drawing.Size(48, 20);
             horaLabel.TabIndex = 3;
             horaLabel.Text = "Hora:";
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(14, 38);
+            idLabel.Location = new System.Drawing.Point(21, 58);
+            idLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.Size = new System.Drawing.Size(27, 20);
             idLabel.TabIndex = 5;
             idLabel.Text = "Id:";
             // 
             // medicoLabel
             // 
             medicoLabel.AutoSize = true;
-            medicoLabel.Location = new System.Drawing.Point(451, 77);
+            medicoLabel.Location = new System.Drawing.Point(676, 118);
+            medicoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             medicoLabel.Name = "medicoLabel";
-            medicoLabel.Size = new System.Drawing.Size(45, 13);
+            medicoLabel.Size = new System.Drawing.Size(64, 20);
             medicoLabel.TabIndex = 7;
             medicoLabel.Text = "Medico:";
             // 
             // motivoCitaLabel
             // 
             motivoCitaLabel.AutoSize = true;
-            motivoCitaLabel.Location = new System.Drawing.Point(235, 77);
+            motivoCitaLabel.Location = new System.Drawing.Point(352, 118);
+            motivoCitaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             motivoCitaLabel.Name = "motivoCitaLabel";
-            motivoCitaLabel.Size = new System.Drawing.Size(63, 13);
+            motivoCitaLabel.Size = new System.Drawing.Size(91, 20);
             motivoCitaLabel.TabIndex = 9;
             motivoCitaLabel.Text = "Motivo Cita:";
             // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(14, 77);
+            nombreLabel.Location = new System.Drawing.Point(21, 118);
+            nombreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.Size = new System.Drawing.Size(69, 20);
             nombreLabel.TabIndex = 11;
             nombreLabel.Text = "Nombre:";
+            // 
+            // precioLabel
+            // 
+            precioLabel.AutoSize = true;
+            precioLabel.Location = new System.Drawing.Point(350, 178);
+            precioLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            precioLabel.Name = "precioLabel";
+            precioLabel.Size = new System.Drawing.Size(57, 20);
+            precioLabel.TabIndex = 14;
+            precioLabel.Text = "Precio:";
+            precioLabel.Click += new System.EventHandler(this.precioLabel_Click);
             // 
             // listaPacientesBindingNavigator
             // 
@@ -140,6 +157,7 @@
             this.listaPacientesBindingNavigator.BindingSource = this.listaPacientesBindingSource;
             this.listaPacientesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.listaPacientesBindingNavigator.DeleteItem = null;
+            this.listaPacientesBindingNavigator.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.listaPacientesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -160,15 +178,20 @@
             this.listaPacientesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.listaPacientesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaPacientesBindingNavigator.Name = "listaPacientesBindingNavigator";
+            this.listaPacientesBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.listaPacientesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaPacientesBindingNavigator.Size = new System.Drawing.Size(789, 25);
+            this.listaPacientesBindingNavigator.Size = new System.Drawing.Size(1184, 31);
             this.listaPacientesBindingNavigator.TabIndex = 0;
             this.listaPacientesBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // listaPacientesBindingSource
+            // 
+            this.listaPacientesBindingSource.DataSource = typeof(BL.CitasMedicas.Paciente);
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(57, 28);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -178,7 +201,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
             // 
             // bindingNavigatorMovePreviousItem
@@ -187,27 +210,27 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 31);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -215,7 +238,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
             // 
             // bindingNavigatorMoveLastItem
@@ -224,13 +247,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -238,7 +261,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
@@ -248,7 +271,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
@@ -257,7 +280,7 @@
             this.listaPacientesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.listaPacientesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("listaPacientesBindingNavigatorSaveItem.Image")));
             this.listaPacientesBindingNavigatorSaveItem.Name = "listaPacientesBindingNavigatorSaveItem";
-            this.listaPacientesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.listaPacientesBindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
             this.listaPacientesBindingNavigatorSaveItem.Text = "Guardar datos";
             this.listaPacientesBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaPacientesBindingNavigatorSaveItem_Click);
             // 
@@ -267,7 +290,7 @@
             this.toolStripButtonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancelar.Image")));
             this.toolStripButtonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
-            this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
+            this.toolStripButtonCancelar.Size = new System.Drawing.Size(82, 29);
             this.toolStripButtonCancelar.Text = "Cancelar";
             this.toolStripButtonCancelar.Visible = false;
             this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
@@ -275,67 +298,65 @@
             // fechaTextBox
             // 
             this.fechaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacientesBindingSource, "Fecha", true));
-            this.fechaTextBox.Location = new System.Drawing.Point(17, 132);
+            this.fechaTextBox.Location = new System.Drawing.Point(26, 203);
+            this.fechaTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fechaTextBox.Name = "fechaTextBox";
-            this.fechaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.fechaTextBox.Size = new System.Drawing.Size(148, 26);
             this.fechaTextBox.TabIndex = 4;
             // 
             // horaTextBox
             // 
             this.horaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacientesBindingSource, "Hora", true));
-            this.horaTextBox.Location = new System.Drawing.Point(127, 132);
+            this.horaTextBox.Location = new System.Drawing.Point(190, 203);
+            this.horaTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.horaTextBox.Name = "horaTextBox";
-            this.horaTextBox.Size = new System.Drawing.Size(79, 20);
+            this.horaTextBox.Size = new System.Drawing.Size(116, 26);
             this.horaTextBox.TabIndex = 5;
             // 
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacientesBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(17, 54);
+            this.idTextBox.Location = new System.Drawing.Point(26, 83);
+            this.idTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
-            this.idTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idTextBox.Size = new System.Drawing.Size(148, 26);
             this.idTextBox.TabIndex = 0;
             // 
             // medicoTextBox
             // 
             this.medicoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacientesBindingSource, "Medico", true));
-            this.medicoTextBox.Location = new System.Drawing.Point(454, 93);
+            this.medicoTextBox.Location = new System.Drawing.Point(681, 143);
+            this.medicoTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.medicoTextBox.Name = "medicoTextBox";
-            this.medicoTextBox.Size = new System.Drawing.Size(210, 20);
+            this.medicoTextBox.Size = new System.Drawing.Size(313, 26);
             this.medicoTextBox.TabIndex = 3;
             // 
             // motivoCitaTextBox
             // 
             this.motivoCitaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacientesBindingSource, "MotivoCita", true));
-            this.motivoCitaTextBox.Location = new System.Drawing.Point(238, 93);
+            this.motivoCitaTextBox.Location = new System.Drawing.Point(357, 143);
+            this.motivoCitaTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.motivoCitaTextBox.Name = "motivoCitaTextBox";
-            this.motivoCitaTextBox.Size = new System.Drawing.Size(210, 20);
+            this.motivoCitaTextBox.Size = new System.Drawing.Size(313, 26);
             this.motivoCitaTextBox.TabIndex = 2;
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacientesBindingSource, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(17, 93);
+            this.nombreTextBox.Location = new System.Drawing.Point(26, 143);
+            this.nombreTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(210, 20);
+            this.nombreTextBox.Size = new System.Drawing.Size(313, 26);
             this.nombreTextBox.TabIndex = 1;
-            // 
-            // precioLabel
-            // 
-            precioLabel.AutoSize = true;
-            precioLabel.Location = new System.Drawing.Point(233, 116);
-            precioLabel.Name = "precioLabel";
-            precioLabel.Size = new System.Drawing.Size(40, 13);
-            precioLabel.TabIndex = 14;
-            precioLabel.Text = "Precio:";
             // 
             // precioTextBox
             // 
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPacientesBindingSource, "Precio", true));
-            this.precioTextBox.Location = new System.Drawing.Point(236, 132);
+            this.precioTextBox.Location = new System.Drawing.Point(354, 203);
+            this.precioTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.precioTextBox.Name = "precioTextBox";
-            this.precioTextBox.Size = new System.Drawing.Size(85, 20);
+            this.precioTextBox.Size = new System.Drawing.Size(126, 26);
             this.precioTextBox.TabIndex = 6;
             // 
             // listaPacientesDataGridView
@@ -351,9 +372,10 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.listaPacientesDataGridView.DataSource = this.listaPacientesBindingSource;
-            this.listaPacientesDataGridView.Location = new System.Drawing.Point(17, 158);
+            this.listaPacientesDataGridView.Location = new System.Drawing.Point(26, 243);
+            this.listaPacientesDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listaPacientesDataGridView.Name = "listaPacientesDataGridView";
-            this.listaPacientesDataGridView.Size = new System.Drawing.Size(764, 147);
+            this.listaPacientesDataGridView.Size = new System.Drawing.Size(1146, 226);
             this.listaPacientesDataGridView.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn1
@@ -398,15 +420,11 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // listaPacientesBindingSource
-            // 
-            this.listaPacientesBindingSource.DataSource = typeof(BL.CitasMedicas.Paciente);
-            // 
             // FormCrearCitaMedica
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 322);
+            this.ClientSize = new System.Drawing.Size(1184, 495);
             this.Controls.Add(this.listaPacientesDataGridView);
             this.Controls.Add(precioLabel);
             this.Controls.Add(this.precioTextBox);
@@ -424,14 +442,17 @@
             this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(this.listaPacientesBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormCrearCitaMedica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Cita Medica";
+            this.Load += new System.EventHandler(this.FormCrearCitaMedica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listaPacientesBindingNavigator)).EndInit();
             this.listaPacientesBindingNavigator.ResumeLayout(false);
             this.listaPacientesBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaPacientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaPacientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaPacientesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
