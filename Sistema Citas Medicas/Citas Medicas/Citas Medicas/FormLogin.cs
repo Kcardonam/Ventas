@@ -29,25 +29,29 @@ namespace Citas_Medicas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string usuario;
-            string contrasena;
-
-            usuario = textBox1.Text;
-            contrasena = textBox2.Text;
+            var usuario = textBox1.Text;
+            var contrasena = textBox2.Text;
 
             button1.Enabled = false;
-            button1.Text = "Verificando...";
+            button1.Text = @"Verificando...";
             Application.DoEvents();
 
            var resultado = _seguridad.Autorizar(usuario, contrasena);
 
             if (resultado == true)
             {
-                this.Close();
+                Close();
             }
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrecta");
+                button1.Enabled = true;
+                button1.Text = "Aceptar";
+                textBox1.Clear();  
+                textBox2.Clear();
+                textBox1.Focus();
+
+                Application.DoEvents();
             }
         }
 

@@ -17,49 +17,9 @@ namespace Citas_Medicas
             InitializeComponent();
         }
 
-        private void crearCitasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reservacionDeCitasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormMenu_Load(object sender, EventArgs e)
         {
             login();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void citaMedicasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void menuStrip3_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void citaMedicasToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,8 +30,7 @@ namespace Citas_Medicas
         private void login()
         {
             var formlogin = new FormLogin();
-            formlogin.MdiParent = this;
-            formlogin.Show();
+            formlogin.ShowDialog();
         }
 
         private void crearCitaMedicaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,11 +48,23 @@ namespace Citas_Medicas
             formBuscarCitasProgramadas.Show();
         }
 
-        private void listaDeDoctoresYEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mantenimientoDoctoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var formListaDoctoresYEspecialidades = new FormDoctores();
             formListaDoctoresYEspecialidades.MdiParent = this;
             formListaDoctoresYEspecialidades.Show();
+        }
+
+        private void facturarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formFactura = new FormFactura();
+            formFactura.MdiParent = this;
+            formFactura.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

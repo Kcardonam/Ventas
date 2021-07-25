@@ -86,7 +86,7 @@ namespace BL.CitasMedicas
             {
                 return resultado;
             }
-       //    _contexto.SaveChanges();
+            _contexto.SaveChanges();
 
             resultado.Exitoso = true;
             return resultado;
@@ -105,7 +105,7 @@ namespace BL.CitasMedicas
                 if (doctor.Id == id)
                 {
                     ListaDoctores.Remove(doctor);
-                   _contexto.SaveChanges();
+                    _contexto.SaveChanges();
                     return true;
                 }
             }
